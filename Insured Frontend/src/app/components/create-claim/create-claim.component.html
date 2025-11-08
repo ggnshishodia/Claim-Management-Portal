@@ -1,0 +1,144 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand navbar-dark" href="#">Insurance Company Name</a>
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <button
+      class="btn btn-success my-2 my-sm-0"
+      type="submit"
+      routerLink="/update-claim"
+    >
+      Update Claim
+    </button>
+  </div>
+</nav>
+
+<p id="heading"></p>
+<h1 align="center">Claim Management Portal</h1>
+
+<div class="container">
+  <p><strong>Enter the below details to Claim Insurance</strong></p>
+  <div class="my-10">
+    <form [formGroup]="claimForm" (ngSubmit)="onSubmit()">
+      <div class="mb-3">
+        <label for="policyNumber" class="form-label">Policy Number:</label>
+        <input
+          class="form-control"
+          type="number"
+          id="policyNo"
+          formControlName="policyNo"
+          required
+        />
+      </div>
+      <div class="mb-3">
+        <label for="estimatedAmount" class="form-label"
+          >Estimated Amount:</label
+        >
+        <input
+          class="form-control"
+          type="number"
+          id="estimatedLoss"
+          formControlName="estimatedLoss"
+          required
+        />
+      </div>
+
+      <div class="mb-3">
+        <label for="dateOfAccident" class="form-label">Date of Accident:</label>
+        <input
+          class="form-control"
+          type="date"
+          id="dateOfAccident"
+          formControlName="dateOfAccident"
+          required
+        />
+      </div>
+
+      <div class="mb-3">
+        <label for="claimStatus" class="form-label">Claim Status:</label>
+        <select
+          class="form-select"
+          id="claimStatus"
+          name="claimStatus"
+          formControlName="claimStatus"
+          required
+        >
+          <option value="">Select</option>
+          <option value="true">Accepted</option>
+          <option value="false">Rejected</option>
+        </select>
+      </div>
+      <div class="mb-3">
+        <label for="approvedAmount" class="form-label"
+          >Amount Approved by Surveyor:</label
+        >
+        <input
+          class="form-control"
+          type="number"
+          id="amtApprovedBySurveyor"
+          name="approvedAmount"
+          formControlName="amtApprovedBySurveyor"
+          required
+        />
+      </div>
+      <div class="mb-3">
+        <label for="withDrawClaim" class="form-label">Withdraw Claim:</label>
+        <select
+          class="form-select"
+          id="withDrawClaim"
+          name="withdrawClaim"
+          formControlName="withDrawClaim"
+          required
+        >
+          <option value="">Select</option>
+          <option value="true">Yes</option>
+          <option value="false">No</option>
+        </select>
+      </div>
+      <div class="mb-3">
+        <label for="surveyorFee" class="form-label">Surveyor Fee:</label>
+        <input
+          class="form-control"
+          type="number"
+          id="surveyorFee"
+          name="surveyorFee"
+          formControlName="surveyorFee"
+          required
+        />
+      </div>
+      <div class="mb-3">
+        <label for="insuranceCompanyApproval" class="form-label"
+          >Insurance Company Approval:</label
+        >
+        <select
+          class="form-select"
+          id="insuranceCompanyApproval"
+          name="insuranceApproval"
+          formControlName="insuranceCompanyApproval"
+          required
+        >
+          <option value="">Select</option>
+          <option value="true">Approved</option>
+          <option value="false">Rejected</option>
+        </select>
+      </div>
+      <button
+        class="btn btn-danger my-2 my-sm-0 text-center"
+        type="submit"
+        [disabled]="claimForm.invalid"
+      >
+        Submit
+      </button>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,67 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand navbar-dark" href="#">Insurance Company Name</a>
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <button
+      class="btn btn-success my-2 my-sm-0"
+      type="submit"
+      routerLink="/create-claim"
+    >
+      Create Claim
+    </button>
+  </div>
+</nav>
+
+<p id="heading"></p>
+<h1 align="center">Claim Management Portal</h1>
+
+<div class="claim-details">
+  <div class="button-container">
+    <p class="fw-bold">Enter Claim Id below</p>
+    <input type="number" [(ngModel)]="claimId" required />
+    <div class="button-sub-container gap 3">
+      <button class="btn btn-primary my-2 my-sm-0" (click)="onSubmit()">
+        Submit
+      </button>
+    </div>
+
+    <div class="claim-details" *ngIf="data">
+      <h2>Claim Details</h2>
+      <p><strong>Policy Number:</strong> {{ data.policyNo }}</p>
+      <p><strong>Estimated Amount:</strong> {{ data.estimatedLoss }}</p>
+      <p><strong>Date of Accident:</strong> {{ data.dateOfAccident }}</p>
+      <p><strong>Claim Status:</strong> {{ data.claimStatus }}</p>
+      <p><strong>Amount Approved by Surveyor:</strong>{{ data.amtApprovedBySurveyor }}</p>
+      <p><strong>Withdraw Claim:</strong> {{ data.withDrawClaim }}</p>
+      <p><strong>Surveyor Fee:</strong> {{ data.surveyorFee }}</p>
+      <p><strong>Insurance Company Approval:</strong>{{ data.insuranceCompanyApproval }}</p>
+    </div>
+
+    <div class="button-sub-container gap-3">
+      <button (click)="acceptClaim()" class="btn btn-primary">
+        Accept Claim Amount
+      </button>
+      <button (click)="withdrawClaim()" class="btn btn-primary">
+        Withdraw Claim
+      </button>
+    </div>
+
+    <div class="button-sub-container gap-3">
+      <button (click)="closeClaim()" class="btn btn-primary">
+        Close Claim
+      </button>
+      <button routerLink="/" class="btn btn-primary">OK</button>
+    </div>
+  </div>
+</div>

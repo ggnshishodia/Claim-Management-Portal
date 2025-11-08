@@ -1,0 +1,44 @@
+.button-container {
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: auto;
+  max-width: 500px;
+  padding: 20px;
+  border-radius: 10px;
+  background-image: url("../../header.jpg");
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  font-size: 16px;
+  line-height: 1;
+}
+
+.button-sub-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 300px;
+  margin-top: 20px;
+}
+nav {
+  background-image: url("../../../bg-image.jpg");
+  font-weight: bold;
+  font-style: oblique;
+}
+.container {
+  margin: auto;
+  max-width: 500px;
+  padding: 20px;
+  border-radius: 10px;
+  background-image: url("../../header.jpg");
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  font-size: 16px;
+  line-height: 1;
+}
+.claim-details{
+  color: white;
+}
+h1{
+  font-style: oblique;
+}

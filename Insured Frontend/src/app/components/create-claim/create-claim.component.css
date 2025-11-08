@@ -1,0 +1,19 @@
+nav{
+    background-image: url('../../../bg-image.jpg');
+    font-weight: bold;
+    font-style: oblique;
+}
+.container {
+      margin: auto;
+      max-width: 500px;
+      padding: 20px;
+      border-radius: 10px;
+      background-image: url('../../header.jpg');
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      font-size: 16px;
+      line-height: 1.0;
+      color: white;
+}
+h1{
+    font-style: oblique;
+}
